@@ -1,4 +1,4 @@
-module.exports = ({ env }) =>  [
+export default ({ env }) =>  [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
