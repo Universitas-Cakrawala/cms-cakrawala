@@ -1,4 +1,4 @@
-export default [
+export default ({ env }) =>  [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
@@ -9,4 +9,30 @@ export default [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
+  {  
+    name: "strapi::security",  
+    config: {  
+      contentSecurityPolicy: {  
+        useDefaults: true,  
+        directives: {  
+          "connect-src": ["'self'", "https:"],  
+          "img-src": [  
+            "'self'",  
+            "data:",  
+            "blob:",  
+            'market-assets.strapi.io',
+            env('MINIO_PRIVATE_ENDPOINT'),
+          ],  
+          "media-src": [  
+            "'self'",  
+            "data:",  
+            "blob:",  
+            'market-assets.strapi.io',
+            env('MINIO_PRIVATE_ENDPOINT'),
+          ],  
+          upgradeInsecureRequests: null,  
+        },  
+      },  
+    },  
+  },  
 ];
