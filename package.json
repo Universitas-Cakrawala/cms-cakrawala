@@ -9,7 +9,12 @@
     "develop": "strapi develop",
     "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "pm2:start": "pm2 start npm --name cms_cakrawala -- run start",
+    "pm2:develop": "pm2 start npm --name cms_cakrawala -- run develop",
+    "pm2:stop": "pm2 stop cms_cakrawala",
+    "pm2:restart": "pm2 restart cms_cakrawala",
+    "pm2:delete": "pm2 delete cms_cakrawala"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.6.0",
