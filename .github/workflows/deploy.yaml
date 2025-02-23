@@ -24,10 +24,10 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh -v -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+          ssh -vvv -o StrictHostKeyChecking=no -o IdentitiesOnly=yes ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
             cd /home/sga-cakrawala/htdocs/cms-cakrawala && 
             git pull origin main &&
             npm install &&
             npm run build &&
-            npm run pm2:start
+            npm run pm2:develop
           "
