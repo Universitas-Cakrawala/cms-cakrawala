@@ -22,6 +22,7 @@ jobs:
           sshpass -p "${{ secrets.SERVER_PASSWORD }}" ssh -vvv -o StrictHostKeyChecking=no -o IdentitiesOnly=yes ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
             ls -la &&
             cd /home/sga-cakrawala/htdocs/cms-cakrawala &&
+            nvm use 20 &&
             git stash &&
             git stash clear &&
             git checkout main &&
@@ -30,35 +31,3 @@ jobs:
             npm run build &&
             pm2 restart cms_cakrawala
           "
-# jobs:
-  # deploy:
-  #   name: Deploy
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #     # - name: Checkout code
-  #     #   uses: actions/checkout@v2
-
-  #     - name: Set up SSH
-  #       run: |
-  #         mkdir -p ~/.ssh
-  #         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-  #         chmod 600 ~/.ssh/id_rsa
-  #         ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
-
-  #     - name: Deploy to server
-  #       run: |
-  #         ssh -vvv -o StrictHostKeyChecking=no -o IdentitiesOnly=yes ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-  #           cd /home/sga-cakrawala/htdocs/cms-cakrawala && 
-  #           nvm use 20 &&
-  #           git stash &&
-  #           git stash clear &&
-  #           git checkout main &&
-  #           git pull &&
-  #           npm install &&
-  #           npm run build &&
-  #           pm2 restart cms_cakrawala && 
-  #           exit
-  #         "
-  #     - name: Clean up SSH
-  #       run: rm -rf ~/.ssh
