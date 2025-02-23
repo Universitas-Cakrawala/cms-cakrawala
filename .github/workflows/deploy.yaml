@@ -26,6 +26,7 @@ jobs:
         run: |
           ssh -vvv -o StrictHostKeyChecking=no -o IdentitiesOnly=yes ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
             cd /home/sga-cakrawala/htdocs/cms-cakrawala && 
+            git stash &&
             git pull origin main &&
             npm install &&
             npm run build &&
