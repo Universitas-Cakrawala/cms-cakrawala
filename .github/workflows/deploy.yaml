@@ -32,5 +32,7 @@ jobs:
             git pull &&
             npm install &&
             npm run build &&
-            pm2 restart cms_cakrawala
+            pm2 stop cms_cakrawala &&
+            pm2 del cms_cakrawala &&
+            npm run pm2:develop
           "
