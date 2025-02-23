@@ -20,10 +20,8 @@ jobs:
       - name: Deploy to server
         run: |
           sshpass -p "${{ secrets.SERVER_PASSWORD }}" ssh -vvv -o StrictHostKeyChecking=no -o IdentitiesOnly=yes ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-            export NVM_DIR=\"$HOME/.nvm\" &&
-            [ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\" &&
-            nvm install 20 && 
-            nvm use 20 &&
+            curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&
+            sudo apt-get install -y nodejs &&
             # Install PM2 globally
             npm install -g pm2 &&
             # Navigate to the project directory
