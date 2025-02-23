@@ -22,7 +22,6 @@ jobs:
           sudo apt-get install sshpass
           sshpass -p "${{ secrets.SERVER_PASSWORD }}" ssh -vvv -o StrictHostKeyChecking=no -o IdentitiesOnly=yes ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
             cd /home/sga-cakrawala/htdocs/cms-cakrawala && 
-            nvm use 20 &&
             git stash &&
             git stash clear &&
             git checkout main &&
