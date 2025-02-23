@@ -34,5 +34,6 @@ jobs:
             npm run build &&
             pm2 stop cms_cakrawala &&
             pm2 del cms_cakrawala &&
+            pm2 save &&
             npm run pm2:develop
           "
