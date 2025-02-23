@@ -22,6 +22,9 @@ jobs:
           sshpass -p "${{ secrets.SERVER_PASSWORD }}" ssh -vvv -o StrictHostKeyChecking=no -o IdentitiesOnly=yes ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
             ls -la &&
             cd /home/sga-cakrawala/htdocs/cms-cakrawala &&
+            rm -rf node_modules &&
+            rm -rf dist &&
+            rm -rf .strapi &&
             nvm use 20 &&
             git stash &&
             git stash clear &&
