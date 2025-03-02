@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-02-23T05:49:30.085Z"
+    "x-generation-date": "2025-02-28T16:39:35.318Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -24,7 +24,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8265/api",
+      "url": "https://cms.sga-cakrawala.org/api",
       "description": "Development server"
     }
   ],
