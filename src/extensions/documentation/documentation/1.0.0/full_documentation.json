@@ -1,4 +1,10 @@
 {
+  "servers": [
+    {
+      "url": "https://cms.sga-cakrawala.org/api",
+      "description": "Production server"
+    }
+  ],
   "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
@@ -14,7 +20,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-02-28T16:39:35.318Z"
+    "x-generation-date": "2025-03-02T03:20:01.125Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -22,12 +28,6 @@
       "users-permissions"
     ]
   },
-  "servers": [
-    {
-      "url": "https://cms.sga-cakrawala.org/api",
-      "description": "Development server"
-    }
-  ],
   "externalDocs": {
     "description": "Find out more",
     "url": "https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html"

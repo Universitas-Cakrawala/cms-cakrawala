@@ -22,8 +22,18 @@ export default ({env}) => ({
   'users-permissions': {
     config: {
       jwt: {
-        expiresIn: '1m',
-      },
-    },
+        expiresIn: '1h' // Atur waktu kedaluwarsa token (misalnya 1 jam)
+      }
+    }
   },
+  'documentation': {
+    config: {
+      servers: [
+        {
+          url: 'https://cms.sga-cakrawala.org/api',
+          description: 'Production server'
+        }
+      ]
+    }
+  }
 })
