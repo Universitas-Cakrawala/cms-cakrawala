@@ -22,7 +22,7 @@ jobs:
           sshpass -p "${{ secrets.SERVER_PASSWORD }}" ssh -vvv -o StrictHostKeyChecking=no -o IdentitiesOnly=yes ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
             ls -la &&
             cd /home/sga-cakrawala/htdocs/cms-cakrawala &&
-            rm -rf node_modules &&
+            rm -rf node_modules package-lock.json &&
             rm -rf dist &&
             rm -rf .strapi &&
             nvm use 20 &&
