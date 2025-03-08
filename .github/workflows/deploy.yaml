@@ -25,7 +25,7 @@ jobs:
             rm -rf node_modules package-lock.json &&
             rm -rf dist &&
             rm -rf .strapi &&
-            nvm use 20 &&
+            nvm use 22 &&
             git stash &&
             git stash clear &&
             git checkout main &&
@@ -34,6 +34,6 @@ jobs:
             npm run build &&
             pm2 stop cms_cakrawala &&
             pm2 del cms_cakrawala &&
-            pm2 save &&
-            npm run pm2:develop
+            npm run pm2:develop &&
+            pm2 save
           "
