@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   push:
     branches:
-      - main  # Ganti 'main' dengan branch yang Anda inginkan
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
